@@ -1,0 +1,251 @@
+// basic styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  font-size: 10px;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: $font-roboto;
+  background-color: $color-primary;
+  color: $color-text;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h5 {
+  font-family: $font-sans;
+  color: $color-hilight;
+}
+
+h1 {
+  font-size: $font-xl;
+}
+
+h2 {
+  font-size: $font-lg;
+}
+
+h3 {
+  font-size: $font-md;
+}
+
+p,
+small,
+span,
+strong,
+a {
+  font-size: $font-xs;
+  color: $color-text;
+  font-size: $font-sm;
+  line-height: 2.5rem;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  transition: 0.4s;
+
+  &:active,
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+section {
+  padding: 6.4rem 0;
+}
+
+.body-overlay {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0.1;
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 3rem 0;
+
+  &-item {
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: $border;
+    border-radius: 5rem;
+    border-width: 2px;
+    transition: 0.4s;
+
+    &:hover {
+      border-color: $color-secondary;
+
+      a {
+        color: $color-secondary;
+      }
+    }
+  }
+}
+
+.btn {
+  width: 100%;
+  height: 6rem;
+  color: $color-hilight;
+  border: 2px solid $color-secondary;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5rem;
+  background-color: $color-secondary;
+  gap: 0.8rem;
+  font-size: $font-md;
+  font-weight: 700;
+  transition: 0.4s;
+
+  &:hover {
+    background-color: transparent;
+    text-decoration: none;
+  }
+}
+
+#__next {
+  max-width: 840px;
+  margin-left: 30rem;
+
+  @media screen and (max-width: 1366px) {
+    margin-left: 13rem;
+  }
+
+  @media screen and (max-width: $md) {
+    width: unset;
+    margin: 2rem;
+  }
+}
+
+.title {
+  padding: 1rem 2rem;
+  border: $border;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  border-radius: 5rem;
+  margin-bottom: 5rem;
+
+  svg {
+    font-size: $font-md;
+  }
+
+  p {
+    text-transform: uppercase;
+  }
+}
+
+.roted-btn {
+  width: 17.5rem;
+  height: 17.5rem;
+  border: $border;
+  display: flex;
+  border-radius: 50%;
+  position: relative;
+  color: $color-hilight;
+  align-items: center;
+  justify-content: center;
+  margin: 3rem;
+  margin-top: 5rem;
+  margin-left: auto;
+
+  &-wrp {
+    width: 17.5rem;
+    height: 17.5rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+  }
+
+  .text {
+    position: absolute;
+    text-transform: uppercase;
+  }
+
+  .icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: $font-lg;
+  }
+}
+
+.counter {
+  display: flex;
+  gap: 3rem;
+  margin-top: 5rem;
+
+  &-item {
+    max-width: 10rem;
+
+    p {
+      line-height: 2.5rem;
+      text-transform: uppercase;
+      padding-top: 2rem;
+    }
+  }
+
+  strong {
+    color: $color-secondary;
+    font-size: 6.4rem;
+    font-weight: 400;
+  }
+}
+
+.title-main {
+  font-size: 6.4rem;
+  font-weight: 400;
+  padding-bottom: 3rem;
+
+  @media screen and (max-width: $sm) {
+    font-size: 4.2rem;
+  }
+
+  span {
+    color: $color-secondary;
+    font-size: 6.4rem;
+
+    @media screen and (max-width: $sm) {
+      font-size: 4.2rem;
+    }
+  }
+}

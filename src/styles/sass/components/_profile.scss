@@ -1,0 +1,70 @@
+.profile {
+  width: 38rem;
+  padding: 4rem;
+  border: $border;
+  border-radius: 3rem;
+  background-color: rgba($color: $color-hide, $alpha: 0.2);
+
+  position: fixed;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+
+  @media screen and (max-width: $lg) {
+    position: unset;
+    transform: translateY(0);
+    width: 100%;
+    background-color: transparent;
+    border: none;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+
+    h1 {
+      color: transparent;
+      font-size: 6.4rem;
+      -webkit-text-stroke: 3px $color-secondary;
+    }
+
+    p {
+      color: $color-hilight;
+      font-size: $font-md;
+      text-align: right;
+      line-height: 3rem;
+    }
+  }
+
+  .image {
+    height: 29rem;
+    margin: 3rem 0;
+
+    @media screen and (max-width: $lg) {
+      height: auto;
+    }
+
+    img {
+      border-radius: 5rem;
+      object-fit: cover;
+    }
+  }
+
+  .contact-info {
+    text-align: center;
+
+    a,
+    p {
+      color: $color-hilight;
+      font-size: $font-md;
+      padding: 0.5rem 0;
+    }
+  }
+
+  .copy-right {
+    text-align: center;
+    margin-top: 2rem;
+  }
+}

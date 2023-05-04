@@ -1,0 +1,31 @@
+// variable
+// ****** color ******
+
+$color-primary: #1f1f1f;
+$color-secondary: #28e98c;
+$color-hilight: #fffff1;
+$color-border: #646464;
+$color-text: #999998;
+$color-hide: #404042;
+
+// ****** size ******
+$sm: 500px;
+$md: 768px;
+$lg: 1024px;
+$xl: 1440px;
+
+// ******* font size ******
+$font-xs: 1.6rem;
+$font-sm: 1.8rem;
+$font-md: 2.2rem;
+$font-lg: 2.8rem;
+$font-xl: 3.4rem;
+
+// ***** font *****;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,500;1,700;1,900&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap");
+
+$font-roboto: "Roboto", sans-serif;
+$font-sans: "Source Sans Pro", sans-serif;
+
+// ***** border *****
+$border: 1px solid $color-border;
