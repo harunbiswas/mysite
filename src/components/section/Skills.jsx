@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { GiSkills } from "react-icons/gi";
 import Title from "../Title";
 import TitleMain from "../TitleMain";
@@ -37,9 +36,6 @@ export default function Skills() {
     },
   ];
 
-  useEffect(() => {
-    console.log("test");
-  }, []);
   return (
     <section className="skills" id="skills">
       <Title data={{ text: "Skills", icon: <GiSkills /> }} />

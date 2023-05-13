@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useState } from "react";
 import { BiDollar } from "react-icons/bi";
 import Title from "../Title";
@@ -35,6 +36,10 @@ export default function Pricing({ data }) {
     },
   ]);
 
+  const submitHandler = (e) => {
+    console.log(e);
+  };
+
   const PricingCard = ({ data }) => {
     const { name, text, price, features } = data;
     return (
@@ -58,7 +63,12 @@ export default function Pricing({ data }) {
             </li>
           ))}
         </ul>
-        <button className="btn btn-primary">Pick of offer</button>
+        <button
+          onClick={(e) => submitHandler(data)}
+          className="btn btn-primary"
+        >
+          Pick of offer
+        </button>
       </div>
     );
   };
@@ -71,6 +81,7 @@ export default function Pricing({ data }) {
           <PricingCard data={d} key={d.name} />
         ))}
       </div>
+      <Link href="whatsapp:+8801770201232">Whats App</Link>
     </section>
   );
 }

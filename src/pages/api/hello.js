@@ -1,7 +1,12 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
-const express = require("express");
+const tailio = require("twilio");
 
 export default function handler(req, res) {
-  res.status(200).json({ name: "John Doe" });
+  if (req.method === "POST") {
+    res.end();
+  }
+
+  res.status(404);
+  res.end();
 }
