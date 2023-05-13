@@ -1,3 +1,6 @@
+import { url } from "@/values";
+import axios from "axios";
+import { useRouter } from "next/router";
 import { useState } from "react";
 import { BiDollar } from "react-icons/bi";
 import Title from "../Title";
@@ -34,9 +37,21 @@ export default function Pricing({ data }) {
       ],
     },
   ]);
+  const router = useRouter();
 
   const submitHandler = (e) => {
-    console.log(e);
+    if (e.email) {
+      axios
+        .post(`${url}/price`, e)
+        .then((d) => {
+          router.push("/success");
+        })
+        .catch((err) => {
+          console.log(err.response);
+        });
+    } else {
+      router.push("/login");
+    }
   };
 
   const PricingCard = ({ data }) => {
