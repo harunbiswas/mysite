@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { useState } from "react";
 import { BiDollar } from "react-icons/bi";
 import Title from "../Title";
@@ -81,7 +80,6 @@ export default function Pricing({ data }) {
           <PricingCard data={d} key={d.name} />
         ))}
       </div>
-      <Link href="whatsapp:+8801770201232">Whats App</Link>
     </section>
   );
 }
