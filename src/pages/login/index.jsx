@@ -1,3 +1,5 @@
+import { url } from "@/values";
+import axios from "axios";
 import { useState } from "react";
 
 export default function Login() {
@@ -8,7 +10,19 @@ export default function Login() {
 
   const submitHandler = (e) => {
     e.preventDefault();
+
+    if (email) {
+      axios
+        .post(`${url}/price`, { email })
+        .then((d) => {
+          console.log(d.data);
+        })
+        .catch((e) => {
+          console.log(e.response.data);
+        });
+    }
   };
+
   return (
     <div className="login">
       <form onSubmit={(e) => submitHandler(e)}>
