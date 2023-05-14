@@ -5,9 +5,13 @@ export default function Login() {
   const emailHandler = (e) => {
     setEmail(e.target.value);
   };
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+  };
   return (
     <div className="login">
-      <form>
+      <form onSubmit={(e) => submitHandler(e)}>
         <input
           type="email"
           value={email}

@@ -1,12 +1,34 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
-const accountSid = "AC0fcebc88c19025ba4fecb12b501e4081";
-const authToken = "28338fdb4b4f528ca79fea4ed3eb13d0";
+const DB = require("@/lib/mongoDB/db");
+const User = require("@/lib/mongoDB/user");
 
-export default function handler(req, res) {
-  console.log(req.body);
+export default async function handler(req, res) {
+  const { email } = req.body;
   if (req.method === "POST") {
-    console.log(req.body);
+    await DB();
+
+    try {
+      const u = await User.findOne({ email });
+
+      if (u) {
+        res.status(200).json(u);
+        res.end();
+      } else {
+        try {
+          const result = await User.create({ email });
+          res.status(200).json({ result });
+          res.end();
+        } catch (e) {
+          res.status(500).json({ message: "Internal server error!" });
+          res.end();
+        }
+      }
+    } catch (e) {
+      res.status(500).json({ message: "Internal server error!" });
+      res.end();
+    }
+
     res.end();
   } else {
     res.status(404);
